@@ -81,4 +81,9 @@ def delete_event():
     event_id = int(input("Enter event id to delete: "))
     event = session.get(Event, event_id)  
     if not event:
-        print(f"Event with ID {event_id} does not exist")              
+        print(f"Event with ID {event_id} does not exist")
+        return              
+    session.delete(event)
+    session.commit()
+    print(f"Event ID {event_id} deleted successfully")
+    
