@@ -56,7 +56,7 @@ def create_event():
     event = Event(name = name, location = location, description = description)
     session.add(event)
     session.commit()
-    print(f"Event '{name}' craeted with ID {event.id} and assigned to School_ID {school_id}")
+    print(f"Event '{name}' created with ID {event.id} and assigned to School_ID {school_id}")
 
 def update_event():
     event_id = int(input("Enter Event ID to update: "))     
