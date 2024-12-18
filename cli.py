@@ -92,4 +92,10 @@ def assign_event():
     school_id = int(input("Enter the new School ID: "))
     event = session.get(Event, event_id)
     school = session.get(School, school_id)
+    if not event or not school:
+        print(f"Invalid event Id or School Id.")
+        return
+    event.school_id = school_id
+    session.commit()
+    print("School assignrd successfully")
     
