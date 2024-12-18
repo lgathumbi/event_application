@@ -140,4 +140,29 @@ def main_menu():
         print("8. List Schools")                 
         print("9. List Events") 
         print("10. View Events by School")
-        print("11. Exit")  
+        print("11. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == "1":
+           create_school()
+        elif choice == "2":
+            update_school()
+        elif choice == "3":
+            delete_school()
+        elif choice == "4":
+            create_event()
+        elif choice == "5":
+            update_event()  
+        elif choice == "6":
+            delete_event()    
+        elif choice == "7":
+            assign_event()
+        elif choice == "8":
+            list_schools()
+        elif choice == "9":
+            list_events()   
+        elif choice == "10":
+            view_events_by_school()   
+        elif choice == "11":
+            print("Exiting......")
+            sys.exit()             
