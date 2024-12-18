@@ -69,4 +69,10 @@ def update_event():
     event.description= input("Enter new description for event(current: {event.description}): ") or event.description 
     new_school_id = input(f"Enter new School ID for event(current: {event.school_id})") or event.school_id
     if new_school_id:
-        
+        new_school = session.get(School, int(new_school_id))
+        if not new_school:
+            print(f"School with ID {new_school_id} does not exist. Skipping School update. ")
+        else:
+            event.school_id = new_school_id
+    session.commit()
+    print(f"Event ID {event_id} updated successfully")            
