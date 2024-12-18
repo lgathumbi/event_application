@@ -21,7 +21,7 @@ def create_school():
     school = School(name = name, email = email, address = address)
     session.add(school)
     session.commit()
-    print(f"School '{name}' craeted with ID {school.id}")
+    print(f"School '{name}' created with ID {school.id}")
 
 def update_school():
     school_id = int(input("Enter School ID to update"))
