@@ -119,7 +119,7 @@ def view_events_by_school():
     school_id = int(input("Enter School ID to view events: "))        
     school = session.get(School, school_id)      
     if not school:
-        print("School with ID {school_id} does not exist")
+        print(f"School with ID {school_id} does not exist")  
         return
     events = school.events
     if not events:
