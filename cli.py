@@ -125,4 +125,19 @@ def view_events_by_school():
         return
     print(f"Events belonging to School '{school.name}' (ID {school_id}):")
     for event in events:
-        print(event)         
+        print(event)
+
+def main_menu():
+    while True:
+        print("\nWelcome to the Application. What would you like to do?")
+        print("1. Create School") 
+        print("2. Update School") 
+        print("3. Delete School") 
+        print("4. Create Event") 
+        print("5. Update Event") 
+        print("6. Delete Event") 
+        print("7. Assign Event to School") 
+        print("8. List Schools")                 
+        print("9. List Events") 
+        print("10. View Events by School")
+        print("11. Exit")  
