@@ -105,3 +105,10 @@ def list_schools():
         print("No schools found.")
         for school in schools:
             print(school)    
+
+def list_events():
+    events = session.query(Event).all()
+    if not events:
+        print("No events found.")
+        for event in events:
+            print(event)                
