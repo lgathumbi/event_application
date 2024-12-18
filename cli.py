@@ -11,13 +11,13 @@ session = Session()
 
 def init_db():
     #intialize database
-    Base.metabase.create_all(engine)
+    Base.metadata.create_all(engine)
     print("Database Initialized")
 
 def create_school():
-    name = input("Enter School name")
-    email = input("Enter School email")
-    address = input("Enter School address")
+    name = input("Enter School name:")
+    email = input("Enter School email:")
+    address = input("Enter School address:")
     school = School(name = name, email = email, address = address)
     session.add(school)
     session.commit()
@@ -103,15 +103,17 @@ def list_schools():
     schools = session.query(School).all()
     if not schools:
         print("No schools found.")
+    else:
         for school in schools:
-            print(school)    
+            print(school)
 
 def list_events():
     events = session.query(Event).all()
     if not events:
         print("No events found.")
+    else:
         for event in events:
-            print(event)     
+            print(event)
 
 def view_events_by_school():
     school_id = int(input("Enter School ID to view events: "))        
