@@ -111,4 +111,11 @@ def list_events():
     if not events:
         print("No events found.")
         for event in events:
-            print(event)                
+            print(event)     
+
+def view_events_by_school():
+    school_id = int(input("Enter School ID to view events: "))        
+    school = session.get(School, school_id)      
+    if not school:
+        print("School with ID {school_id} does not exist")
+        return         
