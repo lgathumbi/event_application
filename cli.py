@@ -86,4 +86,10 @@ def delete_event():
     session.delete(event)
     session.commit()
     print(f"Event ID {event_id} deleted successfully")
+
+def assign_event():
+    event_id = int(input("Enter Event ID: "))    
+    school_id = int(input("Enter the new School ID: "))
+    event = session.get(Event, event_id)
+    school = session.get(School, school_id)
     
