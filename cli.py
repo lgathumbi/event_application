@@ -57,4 +57,16 @@ def create_event():
     session.add(event)
     session.commit()
     print(f"Event '{name}' craeted with ID {event.id} and assigned to School_ID {school_id}")
-     
+
+def update_event():
+    event_id = int(input("Enter Event ID to update: "))     
+    event = session.get(Event, event_id)
+    if not event:
+        print(f"Event with ID {event_id} does not exist")
+        return
+    event.name = input("Enter new name for event(current: {event.name}): ") or event.name  
+    event.location = input("Enter new location for event(current: {event.location}): ") or event.location
+    event.description= input("Enter new description for event(current: {event.description}): ") or event.description 
+    new_school_id = input(f"Enter new School ID for event(current: {event.school_id})") or event.school_id
+    if new_school_id:
+        
