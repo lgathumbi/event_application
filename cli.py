@@ -118,4 +118,11 @@ def view_events_by_school():
     school = session.get(School, school_id)      
     if not school:
         print("School with ID {school_id} does not exist")
-        return         
+        return
+    events = school.events
+    if not events:
+        print(f"No events found for School with ID {school_id}")
+        return
+    print(f"Events belonging to School '{school.name}' (ID {school_id}):")
+    for event in events:
+        print(event)         
