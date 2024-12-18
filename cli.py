@@ -165,4 +165,8 @@ def main_menu():
             view_events_by_school()   
         elif choice == "11":
             print("Exiting......")
-            sys.exit()             
+            sys.exit()
+
+        if __name__ == "__main__":
+            init_db()
+            main_menu()                 
