@@ -98,4 +98,10 @@ def assign_event():
     event.school_id = school_id
     session.commit()
     print("School assignrd successfully")
-    
+
+def list_schools():
+    schools = session.query(School).all()
+    if not schools:
+        print("No schools found.")
+        for school in schools:
+            print(school)    
