@@ -24,8 +24,8 @@ def create_school():
     print(f"School '{name}' created with ID {school.id}")
 
 def update_school():
-    school_id = int(input("Enter School ID to update"))
-    school = session.get(school_id)
+    school_id = int(input("Enter School ID to update:"))
+    school = session.get(School, school_id)
     if not school:
         print(f"School with ID {school_id} does not exist")
         return
